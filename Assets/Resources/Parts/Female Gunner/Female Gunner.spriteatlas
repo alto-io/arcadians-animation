@@ -1,0 +1,196 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Female Gunner
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 6b136257bea42d449b23a430e6a0bb72, type: 3}
+    - {fileID: 102900000, guid: 773f06218a612c34ba32d1c185c6d0f1, type: 3}
+    - {fileID: 102900000, guid: 0af921403b0b9214894faed818751f8f, type: 3}
+    - {fileID: 102900000, guid: a72ff69d3dd04de4ab64f49eafc74af5, type: 3}
+    - {fileID: 102900000, guid: 0df238b7cf988d5489b0bae985612e9c, type: 3}
+    - {fileID: 102900000, guid: c1dfdbddedadeb44184941b150b584e2, type: 3}
+    - {fileID: 102900000, guid: 7a84bc62f4fa2a1428d98d0dee22fecf, type: 3}
+    - {fileID: 102900000, guid: 993ddeb187cf73448953d2aca615fcd4, type: 3}
+    - {fileID: 102900000, guid: 6023781b42d81404ca70467273e9d7bb, type: 3}
+    totalSpriteSurfaceArea: 4718592
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 3986f930b09330f4da2e96771cd0bfd3, type: 3}
+  - {fileID: 21300000, guid: aa303360e97369b418f5dac6de94bb8a, type: 3}
+  - {fileID: 21300000, guid: 60c8b170c8ad7dd4cbcc113764457841, type: 3}
+  - {fileID: 21300000, guid: 86d69c70c5950484593b75e5a15f8880, type: 3}
+  - {fileID: 21300000, guid: caa8ff70ea598b941acfb9d1a184653c, type: 3}
+  - {fileID: 21300000, guid: 131a87a05430d2542b2ea3c9be6f5156, type: 3}
+  - {fileID: 21300000, guid: ef9ac8b0ab5eedc4c8fe848be7cf202b, type: 3}
+  - {fileID: 21300000, guid: 45960eb08400bea46b686c2ba7182373, type: 3}
+  - {fileID: 21300000, guid: bf9f01f04d39ff048b9fdc4e9856c297, type: 3}
+  - {fileID: 21300000, guid: 6a632111fb1cc5b45aa1c6f6745f8fc8, type: 3}
+  - {fileID: 21300000, guid: 4067cd31e6ce4894fb10f03bb2dfb6e5, type: 3}
+  - {fileID: 21300000, guid: 9bac30e1aecaf3d448f75c583000e1d9, type: 3}
+  - {fileID: 21300000, guid: b0c4c022831c38343895c2515a71d19c, type: 3}
+  - {fileID: 21300000, guid: 44f9b1325a08b9749848e580a517fc35, type: 3}
+  - {fileID: 21300000, guid: defc2e324735a9f4d8db3b1fea69d85c, type: 3}
+  - {fileID: 21300000, guid: 168ec552f56fe2d4184cc1c39589c55e, type: 3}
+  - {fileID: 21300000, guid: 33d7a9526e3ec9a4bb7527be235e67b8, type: 3}
+  - {fileID: 21300000, guid: dc76a4a2cd11c2549813fabdb39cf490, type: 3}
+  - {fileID: 21300000, guid: c3fc44c2e1dbf9947b595fbed2b6560d, type: 3}
+  - {fileID: 21300000, guid: 63856ac2930138d4db47cfc58346d156, type: 3}
+  - {fileID: 21300000, guid: 5300f203561c9284aa755c02efddb506, type: 3}
+  - {fileID: 21300000, guid: 3f7ab813c0953f645956333a1ca65144, type: 3}
+  - {fileID: 21300000, guid: ee51d853f0423e0449f9be69201298a9, type: 3}
+  - {fileID: 21300000, guid: 35e3dfc3460a0be4bb454c7373c2cf14, type: 3}
+  - {fileID: 21300000, guid: aa2891d363b3635428329f81f92a8196, type: 3}
+  - {fileID: 21300000, guid: 9e9e65d379dfe8b4aa769b637a50ec09, type: 3}
+  - {fileID: 21300000, guid: 862daad3d9c47474f906b7e784b0eb5b, type: 3}
+  - {fileID: 21300000, guid: 0716d62420e26c44e8f15419f9ddf041, type: 3}
+  - {fileID: 21300000, guid: 4c557164b56509b4b873be10feff0f36, type: 3}
+  - {fileID: 21300000, guid: 294e1c8423625c24d854246b97b27abb, type: 3}
+  - {fileID: 21300000, guid: cfd82294ba34f784c8daf12b5725d418, type: 3}
+  - {fileID: 21300000, guid: 0c81c5c4d56c9f14c9def3966cec7b5e, type: 3}
+  - {fileID: 21300000, guid: 21c79de4f613e8e4badad7bb9549ce41, type: 3}
+  - {fileID: 21300000, guid: 6603e715ba15d9b4cae456887dbf09ae, type: 3}
+  - {fileID: 21300000, guid: 5fd40b656c9532b4285c4d0d83f66b2c, type: 3}
+  - {fileID: 21300000, guid: aa3f1b95fa24ec14f8bc1d87b05e2d3f, type: 3}
+  - {fileID: 21300000, guid: 183ae6a52e624494a875c33f84a3d49b, type: 3}
+  - {fileID: 21300000, guid: d316ecb5c1356cb4c87665a7396ff3c5, type: 3}
+  - {fileID: 21300000, guid: cc23ad06d554a3044a3f9aab6e321509, type: 3}
+  - {fileID: 21300000, guid: 7a643b463d7a0194e9bfdf2e668277e7, type: 3}
+  - {fileID: 21300000, guid: 4fca147631dea7646941a15e4aa16027, type: 3}
+  - {fileID: 21300000, guid: c51d44d6eddc3eb4095e346d0b6f2634, type: 3}
+  - {fileID: 21300000, guid: 7e43b647c1cb48a4da3bdb1701496cbd, type: 3}
+  - {fileID: 21300000, guid: 4409ada7b00a99c45af047504337209c, type: 3}
+  - {fileID: 21300000, guid: 6933e9b70cc8d4f4a8633dbf76294df6, type: 3}
+  - {fileID: 21300000, guid: 22ba7708a2d08a64f9640cc6fdd6080e, type: 3}
+  - {fileID: 21300000, guid: 24df2c08fb1766f49a42cc7429a486b8, type: 3}
+  - {fileID: 21300000, guid: 007eac08fd1f8464e9e8c0f76f30e209, type: 3}
+  - {fileID: 21300000, guid: 3b54863838ce816448a6be5d3f004e73, type: 3}
+  - {fileID: 21300000, guid: 003905784ee1a5f4caa8ef2b0c622dfd, type: 3}
+  - {fileID: 21300000, guid: ccd593b8917c34d4783ea000c2d34c20, type: 3}
+  - {fileID: 21300000, guid: 4d969b19b1fe9c049bb402e57d50b3e5, type: 3}
+  - {fileID: 21300000, guid: 88da3d194d8c6af459a31e8eb545f6d8, type: 3}
+  - {fileID: 21300000, guid: 89e32f6933b379149bbb826919e4c05c, type: 3}
+  - {fileID: 21300000, guid: 3510e7b9863ed004db39f86c2b38aa7b, type: 3}
+  - {fileID: 21300000, guid: 9832c74a9023b2a4ca280cb25347c127, type: 3}
+  - {fileID: 21300000, guid: debb93ba061687a4f95b68d1cd4915c8, type: 3}
+  - {fileID: 21300000, guid: 3521526bea37ced4f988c5358f563025, type: 3}
+  - {fileID: 21300000, guid: 0f85bc8b5399cd34ebd37ba4d7d6b1c1, type: 3}
+  - {fileID: 21300000, guid: aa9ecf8bb6ee97848bf7cf810e427f18, type: 3}
+  - {fileID: 21300000, guid: 8de5e70c4da10f5499fae6dd34ccc84d, type: 3}
+  - {fileID: 21300000, guid: a0005d7cc33bf1f4190b245cbe7d5a8e, type: 3}
+  - {fileID: 21300000, guid: 159ca7bc53edc38479933146bc38331e, type: 3}
+  - {fileID: 21300000, guid: 4523c3eca42291542ac6e01450f44415, type: 3}
+  - {fileID: 21300000, guid: c4e1773dfabd2fa4d805a80bdb06f09e, type: 3}
+  - {fileID: 21300000, guid: ad559a9dd335b144fa19e26a1e877bcd, type: 3}
+  - {fileID: 21300000, guid: 64614cbda51f9da4382d59f2c68dfff2, type: 3}
+  - {fileID: 21300000, guid: 9c796fced054941488ad75fd8ecdca58, type: 3}
+  - {fileID: 21300000, guid: 94a7476f94a47694687912ed49145e50, type: 3}
+  - {fileID: 21300000, guid: 2a17b67fe8f5fa342bb616f592ea363e, type: 3}
+  - {fileID: 21300000, guid: 9a42a49fe67908c4592e51e50954ec51, type: 3}
+  - {fileID: 21300000, guid: 3a654effc10f94748823e48b638118b1, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Staves-R
+  - Glasses-and-Eyebrows
+  - Sad
+  - Ranger-Tunic
+  - Flying-Guillotine-R
+  - Red-Bandana
+  - Okay
+  - Black-Leather-Leggings
+  - Scar
+  - Poison-Stare
+  - Angry
+  - Dark
+  - Winking
+  - Orc
+  - Soldier-Brown-Hair
+  - Pucker
+  - Crossbow-R
+  - Tomb-Raider-Pistol-L
+  - Rifle-R
+  - Smile
+  - Happy
+  - White-Glasses
+  - Soldier-Sleeveless-Armor
+  - Ranger-Leggings
+  - Soldier-Rifle-R
+  - uwu-Eyes
+  - One-Fang
+  - Short-White-Hair
+  - Red-Head-Pony
+  - Base
+  - Blonde-Bandana
+  - Sneaky
+  - Sunglasses
+  - Tomb-Raider-Pistol-R
+  - Metroid-Rifle-R
+  - Soldier-Blonde-Hair
+  - Shellsocked
+  - Original
+  - Soldier-Army-Leggings
+  - Eyepatch
+  - Little-Smile
+  - Crossbow-L
+  - Tomb-Raider-Hair
+  - Green-Vest
+  - Fiery-Stare
+  - White--Leggings
+  - Mechanic-Brown-Rat
+  - Bushy-Eyebrows
+  - Trinity-Hair
+  - Wild-Hair
+  - High-Pony
+  - Soldier-Rifle-L
+  - Metal
+  - Green-Pony
+  - Light-Blond-Hair
+  - Rifle-L
+  - Flying-Guillotine-L
+  - Closed-Smile
+  - Tomb-Raider-Armor
+  - Light
+  - Orange-Hair
+  - Rat-Tail
+  - Icy-Stare
+  - Zombie
+  - Mischief
+  - Very-Sad
+  - Vampire-Fangs
+  - Black-Leather-Jacket
+  - Khaki-Shorts
+  - Toothless
+  - Gold
+  - Uwu-Mouth
+  m_RenderDataMap: {}
+  m_Tag: Female Gunner
+  m_IsVariant: 0

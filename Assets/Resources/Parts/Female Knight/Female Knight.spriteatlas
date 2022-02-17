@@ -1,0 +1,204 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Female Knight
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 4e4b6a18517708c4c838aa0437e8ec38, type: 3}
+    - {fileID: 102900000, guid: 25b6810ff0144d64191121794a9f2efa, type: 3}
+    - {fileID: 102900000, guid: dff291ca6da2cf247900233bb3b20c20, type: 3}
+    - {fileID: 102900000, guid: a1ea377778470ea448436c250a7689a2, type: 3}
+    - {fileID: 102900000, guid: 944a77df85b456e4c9375a288a933834, type: 3}
+    - {fileID: 102900000, guid: a35d9cffa896b284ba7506bb8e5a96ab, type: 3}
+    - {fileID: 102900000, guid: 0f1c02d4885c9db40aee20bfd5d0c847, type: 3}
+    - {fileID: 102900000, guid: 856e10d5a42d3aa4aaaa3e6816d1e8eb, type: 3}
+    - {fileID: 102900000, guid: 1a8095c7a11135d4eb6cef9aec38ee8e, type: 3}
+    totalSpriteSurfaceArea: 4980736
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: a9c36080e86c14b4c9f52cd60de789a0, type: 3}
+  - {fileID: 21300000, guid: d2b5479057060c34f8cb5bf12e8b49a9, type: 3}
+  - {fileID: 21300000, guid: 2902dbd0e1b5d794eb41252a8236b497, type: 3}
+  - {fileID: 21300000, guid: a03fb0f0161894d498f509cea2ae9a3b, type: 3}
+  - {fileID: 21300000, guid: 55c06ef07cd98b347ac15c6d463e8716, type: 3}
+  - {fileID: 21300000, guid: 07ee1b11a8f4b3e499628e053f6e12d8, type: 3}
+  - {fileID: 21300000, guid: 24c08e513e306af438dfbe0c3d74f66d, type: 3}
+  - {fileID: 21300000, guid: a142d8611394d1447a04ff68960de73d, type: 3}
+  - {fileID: 21300000, guid: 03f774813fe03b74b8c93229d28e5b09, type: 3}
+  - {fileID: 21300000, guid: 2f0040b1d6888ae4486a4e2d44a34f35, type: 3}
+  - {fileID: 21300000, guid: e3039fb1cef77fb4eb12b3e067f5b65f, type: 3}
+  - {fileID: 21300000, guid: 575183d1f14fbcd44b8c995cb36a7e84, type: 3}
+  - {fileID: 21300000, guid: 109e3402a6098e941b67023fc2de4b2a, type: 3}
+  - {fileID: 21300000, guid: 20e64b02bf3672c4c91673a261c54ad8, type: 3}
+  - {fileID: 21300000, guid: 10c58f226b739b544ae8c36c09a44b35, type: 3}
+  - {fileID: 21300000, guid: b9ba62426bd3e1143a37fe8f2c882bb2, type: 3}
+  - {fileID: 21300000, guid: 581e29927786d7a4eb5bafc29265d68f, type: 3}
+  - {fileID: 21300000, guid: 4dfda3b2bd6345f40bbaba4a666aa58f, type: 3}
+  - {fileID: 21300000, guid: a049dcb23964a9e468d341e736faa875, type: 3}
+  - {fileID: 21300000, guid: 13486bc20ff3afd4eb555b036639ff6b, type: 3}
+  - {fileID: 21300000, guid: 82a985f2101bb0042afe190bdbccec12, type: 3}
+  - {fileID: 21300000, guid: 9eea1e035d86122409158e7a2f697264, type: 3}
+  - {fileID: 21300000, guid: 1a6b9b138daa91646ad35a3e2aaeca34, type: 3}
+  - {fileID: 21300000, guid: 085cbd04a742f82418d4bd40a9362ebf, type: 3}
+  - {fileID: 21300000, guid: c10f21849c67ce14eac55c8865b90e11, type: 3}
+  - {fileID: 21300000, guid: b10ba7f4c7ddd7f42bd723931f9fbdb3, type: 3}
+  - {fileID: 21300000, guid: d787e0151ead8f3448f31bba85ef12bc, type: 3}
+  - {fileID: 21300000, guid: 72c35715d2ed7a74d8053944b25622b4, type: 3}
+  - {fileID: 21300000, guid: d7a855257117eb94c83cab583c224c33, type: 3}
+  - {fileID: 21300000, guid: 387ff435974ea6d4d8fb8a3e07f176a4, type: 3}
+  - {fileID: 21300000, guid: 12581e458cd996f48a1e83fe512ea2ab, type: 3}
+  - {fileID: 21300000, guid: a7cd37551ec353d4a9fd09ae3a3a128b, type: 3}
+  - {fileID: 21300000, guid: 4ab1c8555f8dea94792d647f2f9fcaac, type: 3}
+  - {fileID: 21300000, guid: 3c4602b5ee072b44499dc6dab15b8fb0, type: 3}
+  - {fileID: 21300000, guid: 651c7cc5f2bcd904783373c87dfc64eb, type: 3}
+  - {fileID: 21300000, guid: 33a1aa26072722c44a29901e9d2ddaef, type: 3}
+  - {fileID: 21300000, guid: efef4d26ea20f73479664a8881caa978, type: 3}
+  - {fileID: 21300000, guid: 9c764fc6c9a99a1498c4fd6bd193f2bb, type: 3}
+  - {fileID: 21300000, guid: 52596257eb4c3bb4b94e007f3c0569dc, type: 3}
+  - {fileID: 21300000, guid: 59a6bb97f462c7043b8ce8802c31b10a, type: 3}
+  - {fileID: 21300000, guid: d59595d7b5f8a6d43944892a3658d9aa, type: 3}
+  - {fileID: 21300000, guid: 15051ce77a00a91489d1f864975c9050, type: 3}
+  - {fileID: 21300000, guid: f6e17ce7d6db8b04b8114392a9f02480, type: 3}
+  - {fileID: 21300000, guid: 7fe9720867fffba41b320efe1651f86a, type: 3}
+  - {fileID: 21300000, guid: 0dd702381d4d20745822467f0cda117f, type: 3}
+  - {fileID: 21300000, guid: 5e508058dc5cc6640b3183919468c561, type: 3}
+  - {fileID: 21300000, guid: ef7897a888b5d9e4bbf58302b005a8e6, type: 3}
+  - {fileID: 21300000, guid: 5a052409d35163b4a92ed6fcf1971013, type: 3}
+  - {fileID: 21300000, guid: 01ed3e093e7b2d648ac97689d49c3641, type: 3}
+  - {fileID: 21300000, guid: 0ed020394fab9984c98e866881dd8e6a, type: 3}
+  - {fileID: 21300000, guid: 305a3359901b4eb419772cfd43056286, type: 3}
+  - {fileID: 21300000, guid: 61e5bbd90cdf6f94ab0439d38aa5b67b, type: 3}
+  - {fileID: 21300000, guid: 31d9174a2dcaddf4eb366cd8c6e817d0, type: 3}
+  - {fileID: 21300000, guid: 2d020a7ac57f0ed408b09c05bfce0f7a, type: 3}
+  - {fileID: 21300000, guid: 262dc2ea039c04a44ab0993005e1d5bf, type: 3}
+  - {fileID: 21300000, guid: 84022d1beef21a54282127defc267bb0, type: 3}
+  - {fileID: 21300000, guid: 2ab1c82b38c06424e9132a5fbf0a2751, type: 3}
+  - {fileID: 21300000, guid: 317daa2b20b03294da26d9a16d8d44e7, type: 3}
+  - {fileID: 21300000, guid: 6e5b806bccbce7945a023425dd422e98, type: 3}
+  - {fileID: 21300000, guid: 2d73a32c2e1a18640a4185d2b7164f4f, type: 3}
+  - {fileID: 21300000, guid: fb33893ce8c63a04baee78aa001f4e4a, type: 3}
+  - {fileID: 21300000, guid: 1cbcc74c05be93848a6abe9645a23a7f, type: 3}
+  - {fileID: 21300000, guid: ebe518ecd87ac3f44a64ac9a96b4182a, type: 3}
+  - {fileID: 21300000, guid: 0a14754d00587a84f9229e1e716973e1, type: 3}
+  - {fileID: 21300000, guid: eae4776ddbeb879489f4af2177909b5c, type: 3}
+  - {fileID: 21300000, guid: 7bd94a6de26437a4288e6a63b2880667, type: 3}
+  - {fileID: 21300000, guid: 12e37efdfd3177440894038fd8645927, type: 3}
+  - {fileID: 21300000, guid: 5b4ba91ef87e44146b814336eba470ab, type: 3}
+  - {fileID: 21300000, guid: 25df3f2e4b2ec214983bcef9369e1ae3, type: 3}
+  - {fileID: 21300000, guid: 6f2af54e699719441990b953b2efaa28, type: 3}
+  - {fileID: 21300000, guid: 83d8746ea7809854c997b768bf9744e7, type: 3}
+  - {fileID: 21300000, guid: 9032063fd356cc74a923c67841cea6a9, type: 3}
+  - {fileID: 21300000, guid: f267da5f95851a04ba426fb3f6af9be5, type: 3}
+  - {fileID: 21300000, guid: 1ed52d5f92fa85f4b8cfb8623c58fdb9, type: 3}
+  - {fileID: 21300000, guid: 12f5ed9f609d9cb49a18a30640851da7, type: 3}
+  - {fileID: 21300000, guid: e8414eef969d85a4cb3169b7429c45c4, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Axe-R
+  - Light
+  - Little-Smile
+  - Shellsocked
+  - Poison-Stare
+  - Red-Head-Pony
+  - Toothless
+  - Rat-Tail
+  - Metal
+  - Angry
+  - Sad
+  - Trident-R
+  - White-Glasses
+  - Poison-Sword-R
+  - Fiery-Stare
+  - Chainsaw-R
+  - Samurai-Armor
+  - Viking-Helmet
+  - Very-Sad
+  - Zombie
+  - Glasses-and-Eyebrows
+  - Eyepatch
+  - Kerrigan-Leggings
+  - Dark
+  - Samurai-Helmet
+  - Happy
+  - Knight-Cross-L
+  - Metroid-Helmet
+  - Kerrigan-Armor
+  - Amazon-Leggings
+  - uwu-Eyes
+  - Deedlit-Armor
+  - Knight-Sword-L
+  - Okay
+  - Smile
+  - Amazon-Armor
+  - Sunglasses
+  - Icy-Stare
+  - Mechanic-Brown-Rat
+  - Scythe-L
+  - Knight-Shield-R
+  - Metroid-Leggings
+  - High-Pony
+  - Trident-L
+  - Knight-Flaming-Sword-L
+  - Short-White-Hair
+  - Orc
+  - Closed-Smile
+  - Mischief
+  - Light-Blond-Hair
+  - Base
+  - Axe-L
+  - Witcher-Leggings
+  - Winking
+  - Scar
+  - Barbarian-Armor
+  - Scythe-R
+  - Poison-Sword-L
+  - Pucker
+  - Barbarian-Leggings
+  - Uwu-Mouth
+  - Vampire-Fangs
+  - Sneaky
+  - Lance-R
+  - Centurion-Helmet
+  - Samurai-Leggings
+  - Gold
+  - Witcher-Tunic
+  - Wild-Hair
+  - Bushy-Eyebrows
+  - Deedlit-Leggings
+  - One-Fang
+  - Orange-Hair
+  - Original
+  - Sword-L
+  - Green-Pony
+  m_RenderDataMap: {}
+  m_Tag: Female Knight
+  m_IsVariant: 0
