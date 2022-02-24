@@ -3,6 +3,9 @@ using UnityEngine.Networking;
 using System.Collections;
 using System.Collections.Generic;
 
+namespace OPGames.Arcadians
+{
+
 [System.Serializable]
 public class Attribute
 {
@@ -17,5 +20,11 @@ public class ArcadianInfo
 	public string description;
 	public string name;
 	public string image;
+
+	// added for convenience, not part of json response
+	public bool isFemale;
+	public string className;
 }
 
+
+}

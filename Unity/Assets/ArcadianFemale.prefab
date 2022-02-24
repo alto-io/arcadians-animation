@@ -603,7 +603,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rendererRef: {fileID: 6754962513807803875}
-  ArcadianId: 661
+  ArcadianId: 2
   arcadianInfo:
     attributes: []
     description: 

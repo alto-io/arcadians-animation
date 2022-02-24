@@ -3,6 +3,9 @@ using UnityEngine.Networking;
 using System.Collections;
 using System.Collections.Generic;
 
+namespace OPGames.Arcadians
+{
+
 public class ArcadianSkin : MonoBehaviour
 {
 	public Renderer rendererRef;
@@ -11,19 +14,18 @@ public class ArcadianSkin : MonoBehaviour
 
 	public ArcadianInfo arcadianInfo;
 
+	private Animator animator;
+
 	private Dictionary<string, Material> matDict = 
 		new Dictionary<string, Material>();
 
 	private void Start()
 	{
+		animator = GetComponent<Animator>();
+
 		var mats = rendererRef.materials;
-
 		for (int i=0; i<mats.Length; i++)
-		{
 			AddMaterial(mats[i]);
-		}
-
-		Refresh();
 	}
 
 	// TODO: 
@@ -36,84 +38,28 @@ public class ArcadianSkin : MonoBehaviour
 	// usually only called when loading a new level.
 	private void AddMaterial(Material mat)
 	{
-		if (mat.name.IndexOf("skin") != -1)
-		{
-			matDict.Add("Skin", mat);
-			return;
-		}
-		if (mat.name.IndexOf("eyes") != -1)
-		{
-			matDict.Add("Eyes", mat);
-			return;
-		}
-		if (mat.name.IndexOf("mouth") != -1)
-		{
-			matDict.Add("Mouth", mat);
-			return;
-		}
-		if (mat.name.IndexOf("head") != -1)
-		{
-			matDict.Add("Head", mat);
-			return;
-		}
-		if (mat.name.IndexOf("top") != -1)
-		{
-			matDict.Add("Top", mat);
-			return;
-		}
-		if (mat.name.IndexOf("bottom") != -1)
-		{
-			matDict.Add("Bottom", mat);
-			return;
-		}
-		if (mat.name.IndexOf("right") != -1)
-		{
-			matDict.Add("Right Hand", mat);
-			return;
-		}
-		if (mat.name.IndexOf("left") != -1)
-		{
-			matDict.Add("Left Hand", mat);
-			return;
-		}
+		if      (mat.name.IndexOf("skin")   != -1) { matDict.Add("Skin", mat);       }
+		else if (mat.name.IndexOf("eyes")   != -1) { matDict.Add("Eyes", mat);       }
+		else if (mat.name.IndexOf("mouth")  != -1) { matDict.Add("Mouth", mat);      }
+		else if (mat.name.IndexOf("head")   != -1) { matDict.Add("Head", mat);       }
+		else if (mat.name.IndexOf("top")    != -1) { matDict.Add("Top", mat);        }
+		else if (mat.name.IndexOf("bottom") != -1) { matDict.Add("Bottom", mat);     }
+		else if (mat.name.IndexOf("right")  != -1) { matDict.Add("Right Hand", mat); }
+		else if (mat.name.IndexOf("left")   != -1) { matDict.Add("Left Hand", mat);  }
 	}
 
-	public void Refresh()
-	{
-		StartCoroutine(RefreshCR());
-	}
-
-	private IEnumerator RefreshCR()
-	{
-		string url = string.Format("https://api.arcadians.io/{0}", ArcadianId);
-		using (var www = UnityWebRequest.Get(url))
-		{
-			yield return www.SendWebRequest();
-			var json = www.downloadHandler.text;
-
-			try
-			{
-				arcadianInfo = JsonUtility.FromJson<ArcadianInfo>(json);
-				SetMaterialsFromInfo(arcadianInfo);
-			}
-			catch (System.Exception e)
-			{
-				Debug.LogError(e);
-				yield break;
-			}
-		}
-	}
-
-	public void SetMaterialsFromInfo(ArcadianInfo info)
+	public void LoadFromInfo(ArcadianInfo info)
 	{
 		if (info == null)
 			return;
 
-		string className = "Female Assassin";
+		arcadianInfo = info;
+
+		string classNameFull = "Female Assassin";
 
 		var classAttr = info.attributes.Find((a) => a.trait_type == "Class");
 		if (classAttr != null)
-			className = classAttr.value;
+			classNameFull = classAttr.value;
 
 		foreach (var attr in info.attributes)
 		{
@@ -122,8 +68,10 @@ public class ArcadianSkin : MonoBehaviour
 				continue;
 
 			var mat = matDict[type];
-			SetMaterial(mat, className, type, attr.value);
+			SetMaterial(mat, classNameFull, type, attr.value);
 		}
+
+		animator.SetInteger("Class", ClassToInt(info.className));
 	}
 
 	private void SetMaterial(Material mat, string className, string partType, string partId)
@@ -132,7 +80,7 @@ public class ArcadianSkin : MonoBehaviour
 			Debug.LogWarningFormat("Material is NULL {0}, {1}", className, partType);
 
 		string path = string.Format("Parts/{0}/{1}/{2}", className, partType, partId.Replace(" ", "-"));
-		Debug.LogFormat("SetMaterial {0}", path);
+		//Debug.LogFormat("SetMaterial {0}", path);
 
 		Texture2D tex = Resources.Load<Texture2D>(path);
 		if (tex != null)
@@ -144,4 +92,23 @@ public class ArcadianSkin : MonoBehaviour
 			Debug.LogWarningFormat("Cannot load {0}", path);
 		}
 	}
+
+	public void AnimatorSetTrigger(string trigger)
+	{
+		if (animator != null)
+			animator.SetTrigger(trigger);
+	}
+
+	static public int ClassToInt(string className)
+	{
+		className = className.ToLower();
+		if (className == "assassin") return 0;
+		if (className == "gunner") return 1;
+		if (className == "knight") return 2;
+		if (className == "tech") return 3;
+		if (className == "wizard") return 4;
+		return 0;
+	}
+}
+
 }

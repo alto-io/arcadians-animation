@@ -3,105 +3,61 @@ using UnityEngine.UI;
 using UnityEngine.Networking;
 using System.Collections;
 
+namespace OPGames.Arcadians
+{
+
 public class UIDebug : MonoBehaviour
 {
-	public ArcadianSkin male;
-	public ArcadianSkin female;
+	[SerializeField] private Arcadian arcadian;
+	[SerializeField] private Text textName;
+	[SerializeField] private Text textClass;
+	[SerializeField] private Image image;
+	[SerializeField] private InputField input;
 
-	public Text maleName;
-	public Text femaleName;
-
-	public Text maleClass;
-	public Text femaleClass;
-
-	public Image maleImage;
-	public Image femaleImage;
-
-	public ArcadianInfo arcadianInfo;
-
-	private Animator maleAnimator;
-	private Animator femaleAnimator;
-
-	public void OnBtnRandom()
+	private void Start()
 	{
-		int id = Random.Range(1,3733);
-		StartCoroutine(LoadArcadian(id));
+		OnBtnRandom();
 	}
 
-	private IEnumerator Start()
+	public void OnBtnLoad()
 	{
-		maleAnimator = male.GetComponent<Animator>();
-		femaleAnimator = female.GetComponent<Animator>();
-
-		yield return StartCoroutine(LoadArcadian(160));
-		yield return StartCoroutine(LoadArcadian(661));
-	}
-
-	public void TriggerAnim(string trigger)
-	{
-		if (maleAnimator != null)
-			maleAnimator.SetTrigger(trigger);
-
-		if (femaleAnimator != null)
-			femaleAnimator.SetTrigger(trigger);
-	}
-
-	private IEnumerator LoadArcadian(int id)
-	{
-		string url = string.Format("https://api.arcadians.io/{0}", id);
-		using (var www = UnityWebRequest.Get(url))
+		string t = input.text;
+		int id = 0;
+		if (System.Int32.TryParse(t, out id))
 		{
-			yield return www.SendWebRequest();
-			var json = www.downloadHandler.text;
-			try
-			{
-				arcadianInfo = JsonUtility.FromJson<ArcadianInfo>(json);
-				if (arcadianInfo != null)
-				{
-					bool isFemale = true;
-					string className = "";
-
-					var classAttr = arcadianInfo.attributes.Find((a) => a.trait_type == "Class");
-					if (classAttr != null)
-					{
-						isFemale = classAttr.value.IndexOf("Female") == 0;
-
-						if (isFemale)
-							className = classAttr.value.Replace("Female ", "");
-						else
-							className = classAttr.value.Replace("Male ", "");
-					}
-
-					Debug.Log($"ClassName {className}");
-
-					if (isFemale)
-					{
-						female.SetMaterialsFromInfo(arcadianInfo);
-						femaleName.text = arcadianInfo.name;
-						femaleClass.text = className;
-						femaleAnimator.SetInteger("Class", ClassToInt(className));
-
-						StartCoroutine(UpdateImage(femaleImage, arcadianInfo.image));
-					}
-					else
-					{
-						male.SetMaterialsFromInfo(arcadianInfo);
-						maleName.text = arcadianInfo.name;
-						maleClass.text = className;
-						maleAnimator.SetInteger("Class", ClassToInt(className));
-
-						StartCoroutine(UpdateImage(maleImage, arcadianInfo.image));
-					}
-				}
-			}
-			catch (System.Exception e)
-			{
-				Debug.LogError(e);
-				yield break;
-			}
+			Load(id);
 		}
 	}
 
+	// When the Load Random button is clicked
+	public void OnBtnRandom()
+	{
+		int id = Random.Range(1,3733);
+		input.text = id.ToString();
+		Load(id);
+	}
+
+	public void Load(int id)
+	{
+		if (arcadian == null) return;
+
+		arcadian.Load(id, (info) =>
+		{
+			if (info == null) return;
+
+			textName.text = info.name;
+			textClass.text = info.className;
+			StartCoroutine(UpdateImage(image, info.image));
+		});
+	}
+
+	// Trigger an animation
+	public void TriggerAnim(string trigger)
+	{
+		arcadian.AnimatorSetTrigger(trigger);
+	}
+
+	// Download the image from a URL and set it to img
 	private IEnumerator UpdateImage(Image img, string url)
 	{
 		UnityWebRequest www = UnityWebRequestTexture.GetTexture(url);
@@ -111,12 +67,17 @@ public class UIDebug : MonoBehaviour
 		SetImageTexture(img, tex);
 	}
 
+	// Set Image.sprite from a Texture2D param
 	static public void SetImageTexture(Image img, Texture2D tex)
 	{
 		if (img == null || tex == null)
 			return;
 
-		Sprite spr = Sprite.Create(tex, new Rect(0.0f, 0.0f, tex.width, tex.height), new UnityEngine.Vector2(0.5f, 0.5f));
+		Sprite spr = Sprite.Create(
+				tex, 
+				new Rect(0.0f, 0.0f, tex.width, tex.height), 
+				new UnityEngine.Vector2(0.5f, 0.5f));
+
         if (spr == null)
         {
             Debug.LogError("Cannot create sprite");
@@ -126,15 +87,6 @@ public class UIDebug : MonoBehaviour
         img.sprite = spr;
 		img.preserveAspect = true;
 	}
+}
 
-	static public int ClassToInt(string className)
-	{
-		className = className.ToLower();
-		if (className == "assassin") return 0;
-		if (className == "gunner") return 1;
-		if (className == "knight") return 2;
-		if (className == "tech") return 3;
-		if (className == "wizard") return 4;
-		return 0;
-	}
 }
