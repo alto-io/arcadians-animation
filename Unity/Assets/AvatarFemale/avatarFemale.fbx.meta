@@ -75,6 +75,81 @@ ModelImporter:
   - first:
       74: -296453686472942187
     second: bone.avtfem|m.stun
+  - first:
+      74: -8718660595680777790
+    second: female.armature|f.atkAss
+  - first:
+      74: -3023550040370491468
+    second: female.armature|f.atkGun
+  - first:
+      74: 3187748294533103739
+    second: female.armature|f.atkKni
+  - first:
+      74: 2323623546168237097
+    second: female.armature|f.atkTec
+  - first:
+      74: -5660030929916043674
+    second: female.armature|f.atkWiz
+  - first:
+      74: 4955993850877309683
+    second: female.armature|f.hit
+  - first:
+      74: -4138117359107028546
+    second: female.armature|f.idle
+  - first:
+      74: 6109570190694697017
+    second: female.armature|f.jump
+  - first:
+      74: -2587809865298163514
+    second: female.armature|f.skillBuff
+  - first:
+      74: 475109124444426125
+    second: female.armature|f.skillMelee
+  - first:
+      74: 5899011116915053484
+    second: female.armature|f.skillRanged
+  - first:
+      74: -8605623563327354953
+    second: female.armature|f.stun
+  - first:
+      74: -9153835380328254179
+    second: female.armature|f.walk
+  - first:
+      74: -4139539084397584077
+    second: female.armature|m.atkAss
+  - first:
+      74: -1266912932342498037
+    second: female.armature|m.atkGun
+  - first:
+      74: -4106203828161177470
+    second: female.armature|m.atkKni
+  - first:
+      74: -6459431719212127675
+    second: female.armature|m.atkTec
+  - first:
+      74: -1760373401419180079
+    second: female.armature|m.atkWiz
+  - first:
+      74: 1291414638818437291
+    second: female.armature|m.hit
+  - first:
+      74: -6785095653665408630
+    second: female.armature|m.idle
+  - first:
+      74: 881221337772908234
+    second: female.armature|m.skillBuff
+  - first:
+      74: -4348646146286340695
+    second: female.armature|m.skillMelee
+  - first:
+      74: -245076476501650537
+    second: female.armature|m.skillRanged
+  - first:
+      74: 7210533020972087989
+    second: female.armature|m.stun
+  - first:
+      74: -6707718497114082533
+    second: female.armature|m.walk
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -144,8 +219,8 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: bone.avtfem|f.atkAss
-      takeName: bone.avtfem|f.atkAss
+      name: female.armature|f.atkAss
+      takeName: female.armature|f.atkAss
       internalID: 0
       firstFrame: 0
       lastFrame: 15
@@ -173,8 +248,8 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: bone.avtfem|f.atkGun
-      takeName: bone.avtfem|f.atkGun
+      name: female.armature|f.atkGun
+      takeName: female.armature|f.atkGun
       internalID: 0
       firstFrame: 0
       lastFrame: 15
@@ -202,8 +277,8 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: bone.avtfem|f.atkKni
-      takeName: bone.avtfem|f.atkKni
+      name: female.armature|f.atkKni
+      takeName: female.armature|f.atkKni
       internalID: 0
       firstFrame: 0
       lastFrame: 15
@@ -231,8 +306,8 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: bone.avtfem|f.atkTec
-      takeName: bone.avtfem|f.atkTec
+      name: female.armature|f.atkTec
+      takeName: female.armature|f.atkTec
       internalID: 0
       firstFrame: 0
       lastFrame: 15
@@ -260,8 +335,8 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: bone.avtfem|f.atkWiz
-      takeName: bone.avtfem|f.atkWiz
+      name: female.armature|f.atkWiz
+      takeName: female.armature|f.atkWiz
       internalID: 0
       firstFrame: 0
       lastFrame: 15
@@ -289,8 +364,8 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: bone.avtfem|f.hit
-      takeName: bone.avtfem|f.hit
+      name: female.armature|f.hit
+      takeName: female.armature|f.hit
       internalID: 0
       firstFrame: 0
       lastFrame: 15
@@ -318,8 +393,8 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: bone.avtfem|f.idle
-      takeName: bone.avtfem|f.idle
+      name: female.armature|f.idle
+      takeName: female.armature|f.idle
       internalID: 0
       firstFrame: 0
       lastFrame: 29
@@ -347,8 +422,37 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: bone.avtfem|f.stun
-      takeName: bone.avtfem|f.stun
+      name: female.armature|f.jump
+      takeName: female.armature|f.jump
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 19
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: female.armature|f.stun
+      takeName: female.armature|f.stun
       internalID: 0
       firstFrame: 0
       lastFrame: 39
@@ -376,8 +480,8 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: bone.avtfem|f.walk
-      takeName: bone.avtfem|f.walk
+      name: female.armature|f.walk
+      takeName: female.armature|f.walk
       internalID: 0
       firstFrame: 0
       lastFrame: 29
