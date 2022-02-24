@@ -166,7 +166,7 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1260159432176717219}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 25eaa0f30d4f2234890ec069d4d197b4, type: 3}
+  m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 264d035c166d84741a8684adfa29d4b6, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
@@ -195,6 +195,8 @@ MonoBehaviour:
     description: 
     name: 
     image: 
+    isFemale: 0
+    className: 
 --- !u!1 &3009693464557151190
 GameObject:
   m_ObjectHideFlags: 0
@@ -420,8 +422,8 @@ SkinnedMeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6994231227233310461}
   m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
