@@ -8,13 +8,10 @@ namespace OPGames.Arcadians
 
 public class ArcadianSkin : MonoBehaviour
 {
-	public Renderer rendererRef;
+	[SerializeField] private Renderer rendererRef;
+	[SerializeField] private Animator animator;
 
-	public int ArcadianId = 160;
-
-	public ArcadianInfo arcadianInfo;
-
-	private Animator animator;
+	private ArcadianInfo arcadianInfo;
 
 	private Dictionary<string, Material> matDict = 
 		new Dictionary<string, Material>();

@@ -603,14 +603,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rendererRef: {fileID: 6754962513807803875}
-  ArcadianId: 2
-  arcadianInfo:
-    attributes: []
-    description: 
-    name: 
-    image: 
-    isFemale: 0
-    className: 
+  animator: {fileID: 5520591783601284138}
 --- !u!1 &9051480238108607749
 GameObject:
   m_ObjectHideFlags: 0
