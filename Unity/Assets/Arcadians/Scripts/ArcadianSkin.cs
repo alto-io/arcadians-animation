@@ -16,13 +16,24 @@ public class ArcadianSkin : MonoBehaviour
 	private Dictionary<string, Material> matDict = 
 		new Dictionary<string, Material>();
 
+	private bool initialized = false;
+
 	private void Start()
 	{
-		animator = GetComponent<Animator>();
+		Init();
+	}
 
+	private void Init()
+	{
+		if (initialized == true)
+			return;
+
+		animator = GetComponent<Animator>();
 		var mats = rendererRef.materials;
 		for (int i=0; i<mats.Length; i++)
 			AddMaterial(mats[i]);
+
+		initialized = true;
 	}
 
 	// TODO: 
@@ -49,6 +60,8 @@ public class ArcadianSkin : MonoBehaviour
 	{
 		if (info == null)
 			return;
+
+		Init();
 
 		arcadianInfo = info;
 

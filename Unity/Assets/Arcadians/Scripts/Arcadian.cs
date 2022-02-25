@@ -31,6 +31,9 @@ public class Arcadian : MonoBehaviour
 	// Check Arcadians API to get attributes of a specifc arcadian
 	private IEnumerator LoadCR(int id, Action<ArcadianInfo> onDone)
 	{
+		female.gameObject.SetActive(false);
+		male.gameObject.SetActive(false);
+
 		string url = string.Format("https://api.arcadians.io/{0}", id);
 		using (var www = UnityWebRequest.Get(url))
 		{
@@ -60,6 +63,8 @@ public class Arcadian : MonoBehaviour
 	private void ProcessInfo(ArcadianInfo _info)
 	{
 		if (_info == null) return;
+
+		Debug.Log("ProcessInfo");
 
 		bool isFemale = true;
 		string className = "";

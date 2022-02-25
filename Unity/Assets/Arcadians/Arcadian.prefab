@@ -102,6 +102,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ArcadianFemale
       objectReference: {fileID: 0}
+    - target: {fileID: 8698222080488812557, guid: d164e873a309a2f44a6dc918fa30dc15, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d164e873a309a2f44a6dc918fa30dc15, type: 3}
 --- !u!4 &4955381290037782251 stripped
@@ -133,7 +137,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1260159432176717219, guid: ff1b7714dd8f1c049b01c656923328c1, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1889028043137095449, guid: ff1b7714dd8f1c049b01c656923328c1, type: 3}
       propertyPath: m_RootOrder
