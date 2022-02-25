@@ -2837,5 +2837,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Arcadian
       objectReference: {fileID: 0}
+    - target: {fileID: 5468821601499514287, guid: 9e3462daf1dbf2147a329fa49a9ffb05, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5732763105786723409, guid: 9e3462daf1dbf2147a329fa49a9ffb05, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e3462daf1dbf2147a329fa49a9ffb05, type: 3}

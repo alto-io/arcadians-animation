@@ -2,9 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Networking;
 using System.Collections;
-
-namespace OPGames.Arcadians
-{
+using OPGames.Arcadians;
 
 public class UIDebug : MonoBehaviour
 {
@@ -87,6 +85,4 @@ public class UIDebug : MonoBehaviour
         img.sprite = spr;
 		img.preserveAspect = true;
 	}
-}
-
 }

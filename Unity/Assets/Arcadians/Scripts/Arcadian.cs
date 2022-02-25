@@ -1,16 +1,14 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine.Networking;
 using UnityEngine;
 
 namespace OPGames.Arcadians
 {
 
+// TODO: add caching
 public class Arcadian : MonoBehaviour
 {
-	static private Dictionary<int, ArcadianInfo> cache = new Dictionary<int, ArcadianInfo>();
-
 	[SerializeField] private ArcadianSkin male;
 	[SerializeField] private ArcadianSkin female;
 
@@ -27,24 +25,16 @@ public class Arcadian : MonoBehaviour
 	public void Load(int id, Action<ArcadianInfo> onDone)
 	{
 		if (id == 0) return;
-
-		if (cache.ContainsKey(id))
-		{
-			if (onDone != null)
-				onDone(cache[id]);
-
-			return;
-		}
-
 		StartCoroutine(LoadCR(id, onDone));
 	}
 
 	// Check Arcadians API to get attributes of a specifc arcadian
 	private IEnumerator LoadCR(int id, Action<ArcadianInfo> onDone)
 	{
-		string url = string.Format("https://api.arcadians.io/{0}", id);
-		Debug.Log($"LoadCR {url}");
+		female.gameObject.SetActive(false);
+		male.gameObject.SetActive(false);
 
+		string url = string.Format("https://api.arcadians.io/{0}", id);
 		using (var www = UnityWebRequest.Get(url))
 		{
 			yield return www.SendWebRequest();
@@ -53,9 +43,6 @@ public class Arcadian : MonoBehaviour
 
 			if (onDone != null)
 				onDone(info);
-
-			if (info != null)
-				cache.Add(id, info);
 		}
 	}
 
@@ -77,6 +64,8 @@ public class Arcadian : MonoBehaviour
 	{
 		if (_info == null) return;
 
+		Debug.Log("ProcessInfo");
+
 		bool isFemale = true;
 		string className = "";
 
@@ -88,7 +77,7 @@ public class Arcadian : MonoBehaviour
 			if (isFemale) className = classAttr.value.Replace("Female ", "");
 			else          className = classAttr.value.Replace("Male ", "");
 
-			_info.isFemale  = isFemale;
+			_info.isFemale = isFemale;
 			_info.className = className;
 		}
 
