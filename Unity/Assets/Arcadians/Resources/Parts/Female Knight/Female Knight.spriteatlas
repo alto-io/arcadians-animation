@@ -40,7 +40,7 @@ SpriteAtlas:
     - {fileID: 102900000, guid: 0f1c02d4885c9db40aee20bfd5d0c847, type: 3}
     - {fileID: 102900000, guid: 856e10d5a42d3aa4aaaa3e6816d1e8eb, type: 3}
     - {fileID: 102900000, guid: 1a8095c7a11135d4eb6cef9aec38ee8e, type: 3}
-    totalSpriteSurfaceArea: 4980736
+    totalSpriteSurfaceArea: 4980864
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
@@ -113,6 +113,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: eae4776ddbeb879489f4af2177909b5c, type: 3}
   - {fileID: 21300000, guid: 7bd94a6de26437a4288e6a63b2880667, type: 3}
   - {fileID: 21300000, guid: 12e37efdfd3177440894038fd8645927, type: 3}
+  - {fileID: 21300000, guid: f1934a0e0d49d3c458ad71aebd1ee1a0, type: 3}
   - {fileID: 21300000, guid: 5b4ba91ef87e44146b814336eba470ab, type: 3}
   - {fileID: 21300000, guid: 25df3f2e4b2ec214983bcef9369e1ae3, type: 3}
   - {fileID: 21300000, guid: 6f2af54e699719441990b953b2efaa28, type: 3}
@@ -121,6 +122,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: f267da5f95851a04ba426fb3f6af9be5, type: 3}
   - {fileID: 21300000, guid: 1ed52d5f92fa85f4b8cfb8623c58fdb9, type: 3}
   - {fileID: 21300000, guid: 12f5ed9f609d9cb49a18a30640851da7, type: 3}
+  - {fileID: 21300000, guid: ed3235ef7e05cbb448f9cf1c0c91d18e, type: 3}
   - {fileID: 21300000, guid: e8414eef969d85a4cb3169b7429c45c4, type: 3}
   m_PackedSpriteNamesToIndex:
   - Axe-R
@@ -190,6 +192,7 @@ SpriteAtlas:
   - Centurion-Helmet
   - Samurai-Leggings
   - Gold
+  - None
   - Witcher-Tunic
   - Wild-Hair
   - Bushy-Eyebrows
@@ -198,6 +201,7 @@ SpriteAtlas:
   - Orange-Hair
   - Original
   - Sword-L
+  - None
   - Green-Pony
   m_RenderDataMap: {}
   m_Tag: Female Knight

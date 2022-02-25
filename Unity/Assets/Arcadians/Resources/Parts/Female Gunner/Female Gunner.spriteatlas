@@ -40,7 +40,7 @@ SpriteAtlas:
     - {fileID: 102900000, guid: 7a84bc62f4fa2a1428d98d0dee22fecf, type: 3}
     - {fileID: 102900000, guid: 993ddeb187cf73448953d2aca615fcd4, type: 3}
     - {fileID: 102900000, guid: 6023781b42d81404ca70467273e9d7bb, type: 3}
-    totalSpriteSurfaceArea: 4718592
+    totalSpriteSurfaceArea: 4718720
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
@@ -103,6 +103,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 3510e7b9863ed004db39f86c2b38aa7b, type: 3}
   - {fileID: 21300000, guid: 9832c74a9023b2a4ca280cb25347c127, type: 3}
   - {fileID: 21300000, guid: debb93ba061687a4f95b68d1cd4915c8, type: 3}
+  - {fileID: 21300000, guid: e5517a1bb0621e24ca695aa578749d31, type: 3}
   - {fileID: 21300000, guid: 3521526bea37ced4f988c5358f563025, type: 3}
   - {fileID: 21300000, guid: 0f85bc8b5399cd34ebd37ba4d7d6b1c1, type: 3}
   - {fileID: 21300000, guid: aa9ecf8bb6ee97848bf7cf810e427f18, type: 3}
@@ -117,6 +118,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 94a7476f94a47694687912ed49145e50, type: 3}
   - {fileID: 21300000, guid: 2a17b67fe8f5fa342bb616f592ea363e, type: 3}
   - {fileID: 21300000, guid: 9a42a49fe67908c4592e51e50954ec51, type: 3}
+  - {fileID: 21300000, guid: 3a675bcf21e1d8845afeb4641f0f5ccc, type: 3}
   - {fileID: 21300000, guid: 3a654effc10f94748823e48b638118b1, type: 3}
   m_PackedSpriteNamesToIndex:
   - Staves-R
@@ -176,6 +178,7 @@ SpriteAtlas:
   - Light-Blond-Hair
   - Rifle-L
   - Flying-Guillotine-L
+  - None
   - Closed-Smile
   - Tomb-Raider-Armor
   - Light
@@ -190,6 +193,7 @@ SpriteAtlas:
   - Khaki-Shorts
   - Toothless
   - Gold
+  - None
   - Uwu-Mouth
   m_RenderDataMap: {}
   m_Tag: Female Gunner

@@ -40,7 +40,7 @@ SpriteAtlas:
     - {fileID: 102900000, guid: 9b36b5341ad2dff4fbfb19d5a65b3b59, type: 3}
     - {fileID: 102900000, guid: c534633ad909c8248b9f5ebf46c6f108, type: 3}
     - {fileID: 102900000, guid: b1e05d72c6dc5454bb80a876624294bf, type: 3}
-    totalSpriteSurfaceArea: 5046272
+    totalSpriteSurfaceArea: 5046400
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
@@ -50,6 +50,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: fc459380e5fbed248975f625320f638d, type: 3}
   - {fileID: 21300000, guid: 6feefea0efbb82844b5954c14b4a0809, type: 3}
   - {fileID: 21300000, guid: 7fa6afe0072916b4d959b1a79b6a006b, type: 3}
+  - {fileID: 21300000, guid: 305e60f05629d0540a6ba617c4a66243, type: 3}
   - {fileID: 21300000, guid: c1d7f4f02a7648842bd2f02b06afd658, type: 3}
   - {fileID: 21300000, guid: d2b6be218551d774eb359d3733d2295d, type: 3}
   - {fileID: 21300000, guid: 550628317a2427147b4a7de9a3befd92, type: 3}
@@ -84,6 +85,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 8ae63377356c99843825c0eb7696645c, type: 3}
   - {fileID: 21300000, guid: 83040487a97af4c469fc57293247ecff, type: 3}
   - {fileID: 21300000, guid: 8429c8d7c90cbb7408e30873c3bdef6c, type: 3}
+  - {fileID: 21300000, guid: edc28f68960eb2a43926af4f3e29e688, type: 3}
   - {fileID: 21300000, guid: d5ca43c8009899f4981641dc74db2c2d, type: 3}
   - {fileID: 21300000, guid: 2a1f95d82e9f0e44c9c885028b72e61a, type: 3}
   - {fileID: 21300000, guid: 2bfca4f805eed8647b7402e8862b92e4, type: 3}
@@ -128,6 +130,7 @@ SpriteAtlas:
   - Kunai-L
   - Kunimitsu-Legging
   - Eyepatch
+  - None
   - Mischief
   - Original
   - Strider-Sword-R
@@ -162,6 +165,7 @@ SpriteAtlas:
   - Winking
   - Bushy-Eyebrows
   - Happy
+  - None
   - Rat-Tail
   - Red-Armor
   - Shellsocked
