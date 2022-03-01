@@ -39,19 +39,20 @@ public class Arcadian : MonoBehaviour
 		{
 			yield return www.SendWebRequest();
 			var json = www.downloadHandler.text;
-			LoadFromJson(json);
+			LoadFromJson(json, onDone);
 
-			if (onDone != null)
-				onDone(info);
 		}
 	}
 
-	public void LoadFromJson(string json)
+	public void LoadFromJson(string json, Action<ArcadianInfo> onDone)
 	{
 		try
 		{
 			info = JsonUtility.FromJson<ArcadianInfo>(json);
 			ProcessInfo(info);
+
+			if (onDone != null)
+				onDone(info);
 		}
 		catch (System.Exception e)
 		{
@@ -63,8 +64,6 @@ public class Arcadian : MonoBehaviour
 	private void ProcessInfo(ArcadianInfo _info)
 	{
 		if (_info == null) return;
-
-		Debug.Log("ProcessInfo");
 
 		bool isFemale = true;
 		string className = "";
