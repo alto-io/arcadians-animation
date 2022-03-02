@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Networking;
 using System.Collections;
+using System.Collections.Generic;
 using OPGames.Arcadians;
 
 public class UIDebug : MonoBehaviour
@@ -11,6 +12,10 @@ public class UIDebug : MonoBehaviour
 	[SerializeField] private Text textClass;
 	[SerializeField] private Image image;
 	[SerializeField] private InputField input;
+	[SerializeField] private Text textLog;
+	[SerializeField] private int logLines = 7;
+
+	private Queue<string> logs = new Queue<string>();
 
 	private void Start()
 	{
@@ -85,4 +90,33 @@ public class UIDebug : MonoBehaviour
         img.sprite = spr;
 		img.preserveAspect = true;
 	}
+
+	private void OnEnable()
+    {
+        Application.logMessageReceived += HandleLog;
+    }
+
+    private void OnDisable()
+    {
+        Application.logMessageReceived -= HandleLog;
+    }
+
+    private void HandleLog(string logString, string stackTrace, LogType type)
+    {
+		if (type != LogType.Warning && type != LogType.Error)
+			return;
+
+		if (logs.Count >= logLines)
+			logs.Dequeue();
+
+		logs.Enqueue(logString);
+
+		string val = "";
+		foreach (string s in logs)
+		{
+			val += s + "\n";
+		}
+
+		textLog.text = val;
+    }
 }

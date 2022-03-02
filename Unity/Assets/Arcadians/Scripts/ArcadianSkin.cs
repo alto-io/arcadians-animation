@@ -65,11 +65,7 @@ public class ArcadianSkin : MonoBehaviour
 
 		arcadianInfo = info;
 
-		string classNameFull = "Female Assassin";
-
-		var classAttr = info.attributes.Find((a) => a.trait_type == "Class");
-		if (classAttr != null)
-			classNameFull = classAttr.value;
+		string gender = info.isFemale ? "Female" : "Male";
 
 		foreach (var attr in info.attributes)
 		{
@@ -78,18 +74,18 @@ public class ArcadianSkin : MonoBehaviour
 				continue;
 
 			var mat = matDict[type];
-			SetMaterial(mat, classNameFull, type, attr.value);
+			SetMaterial(mat, gender, type, attr.value);
 		}
 
 		animator.SetInteger("Class", ClassToInt(info.className));
 	}
 
-	private void SetMaterial(Material mat, string className, string partType, string partId)
+	private void SetMaterial(Material mat, string gender, string partType, string partId)
 	{
 		if (mat == null)
-			Debug.LogWarningFormat("Material is NULL {0}, {1}", className, partType);
+			Debug.LogWarningFormat("Material is NULL {0}, {1}", gender, partType);
 
-		string path = string.Format("Parts/{0}/{1}/{2}", className, partType, partId.Replace(" ", "-"));
+		string path = string.Format("Parts/{0}/{1}/{2}", gender, partType, partId.Replace(" ", "-"));
 		//Debug.LogFormat("SetMaterial {0}", path);
 
 		Texture2D tex = Resources.Load<Texture2D>(path);
@@ -99,6 +95,7 @@ public class ArcadianSkin : MonoBehaviour
 		}
 		else
 		{
+			//mat.mainTexture = null;
 			Debug.LogWarningFormat("Cannot load {0}", path);
 		}
 	}
