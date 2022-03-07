@@ -16,10 +16,27 @@ public class UIDebug : MonoBehaviour
 	[SerializeField] private int logLines = 7;
 
 	private Queue<string> logs = new Queue<string>();
+	private const int MIN_ID = 1;
+	private const int MAX_ID = 3733;
+	private int currId = MIN_ID;
 
 	private void Start()
 	{
 		OnBtnRandom();
+	}
+
+	public void OnBtnNext()
+	{
+		currId++;
+		if (currId > MAX_ID) currId = MIN_ID;
+		Load(currId);
+	}
+
+	public void OnBtnPrev()
+	{
+		currId--;
+		if (currId < MIN_ID) currId = MAX_ID;
+		Load(currId);
 	}
 
 	public void OnBtnLoad()
@@ -36,13 +53,14 @@ public class UIDebug : MonoBehaviour
 	public void OnBtnRandom()
 	{
 		int id = Random.Range(1,3733);
-		input.text = id.ToString();
 		Load(id);
 	}
 
 	public void Load(int id)
 	{
 		if (arcadian == null) return;
+		currId = id;
+		input.text = id.ToString();
 
 		arcadian.Load(id, (info) =>
 		{
