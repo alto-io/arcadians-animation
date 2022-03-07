@@ -17,7 +17,7 @@ public class UIDebug : MonoBehaviour
 
 	private Queue<string> logs = new Queue<string>();
 	private const int MIN_ID = 1;
-	private const int MAX_ID = 3733;
+	private const int MAX_ID = 3732;
 	private int currId = MIN_ID;
 
 	private void Start()
@@ -52,7 +52,7 @@ public class UIDebug : MonoBehaviour
 	// When the Load Random button is clicked
 	public void OnBtnRandom()
 	{
-		int id = Random.Range(1,3733);
+		int id = Random.Range(MIN_ID,MAX_ID+1);
 		Load(id);
 	}
 
