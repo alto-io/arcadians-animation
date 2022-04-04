@@ -48,11 +48,11 @@ public class Arcadian : MonoBehaviour
 	{
 		try
 		{
-			info = JsonUtility.FromJson<ArcadianInfo>(json);
-			ProcessInfo(info);
+			var temp = JsonUtility.FromJson<ArcadianInfo>(json);
+			ProcessInfo(temp);
 
 			if (onDone != null)
-				onDone(info);
+				onDone(temp);
 		}
 		catch (System.Exception e)
 		{
@@ -61,9 +61,11 @@ public class Arcadian : MonoBehaviour
 		}
 	}
 
-	private void ProcessInfo(ArcadianInfo _info)
+	public void ProcessInfo(ArcadianInfo _info)
 	{
 		if (_info == null) return;
+
+		this.info = _info;
 
 		bool isFemale = true;
 		string className = "";
