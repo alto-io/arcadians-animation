@@ -14,6 +14,7 @@ Open the UIDebug.cs shows how to use the Arcadian class
 
 ## Arcadians.unitypackage
 
+Found in the [releases page](https://github.com/alto-io/arcadians-animation/releases)
 This contains the Unity/Assets/Arcadians directory. Import it to a separate project so you can use the animated arcadians
 
 ## Blender File
