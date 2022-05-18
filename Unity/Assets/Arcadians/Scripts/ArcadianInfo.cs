@@ -11,6 +11,7 @@ public class Attribute
 {
 	public string trait_type;
 	public string value;
+	public string rarity;
 }
 
 [System.Serializable]

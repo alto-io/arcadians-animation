@@ -5,11 +5,22 @@ using System.Collections;
 using System.Collections.Generic;
 using OPGames.Arcadians;
 
+[System.Serializable]
+public class RarityResult
+{
+	public string rarity;
+	public float score;
+	public List<Attribute> attributes;
+}
+
 public class UIDebug : MonoBehaviour
 {
 	[SerializeField] private Arcadian arcadian;
 	[SerializeField] private Text textName;
 	[SerializeField] private Text textClass;
+	[SerializeField] private Text textParts;
+	[SerializeField] private Text textRarity;
+	[SerializeField] private Text textScore;
 	[SerializeField] private Image image;
 	[SerializeField] private InputField input;
 	[SerializeField] private Text textLog;
@@ -19,6 +30,8 @@ public class UIDebug : MonoBehaviour
 	private const int MIN_ID = 1;
 	private const int MAX_ID = 3732;
 	private int currId = MIN_ID;
+
+	private RarityResult rarityResult;
 
 	private void Start()
 	{
@@ -69,6 +82,7 @@ public class UIDebug : MonoBehaviour
 			textName.text = info.name;
 			textClass.text = info.className;
 			StartCoroutine(UpdateImage(image, info.image));
+			StartCoroutine(GetRarityRequest(info));
 		});
 	}
 
@@ -131,10 +145,62 @@ public class UIDebug : MonoBehaviour
 
 		string val = "";
 		foreach (string s in logs)
-		{
 			val += s + "\n";
-		}
 
 		textLog.text = val;
     }
+
+	// Download the image from a URL and set it to img
+	private IEnumerator GetRarityRequest(ArcadianInfo info)
+	{
+		if (info == null || info.attributes == null)
+			yield break;
+
+		string url = "http://localhost:3000/rarity?";
+
+		int len = info.attributes.Count;
+		for (int i=0; i<len; i++)
+		{
+			var attr = info.attributes[i];
+
+			if (i > 0) url += "&";
+
+			string temp = attr.value.Replace("_", " ");
+
+			url += $"{attr.trait_type}={temp}";
+		}
+
+		var www = UnityWebRequest.Get(url);
+		yield return www.SendWebRequest();
+
+		rarityResult = JsonUtility.FromJson<RarityResult>(www.downloadHandler.text);
+		FillRarityResult(rarityResult);
+	}
+
+	private void FillRarityResult(RarityResult r)
+	{
+		if (r == null) return;
+
+		if (textRarity != null) textRarity.text = r.rarity;
+		if (textScore != null) textScore.text = r.score.ToString();
+		
+		FillTextParts(r.attributes, textParts);
+	}
+
+	private void FillTextParts(List<Attribute> attributes, Text text)
+	{
+		if (text == null) return;
+		if (attributes == null) return;
+
+		string str = "";
+		int len = attributes.Count;
+		for (int i=0; i<len; i++)
+		{
+			var attr = attributes[i];
+			if (i > 0) str += "\n";
+			str += $"{attr.trait_type}: {attr.value} ({attr.rarity})";
+		}
+
+		text.text = str;
+	}
 }
