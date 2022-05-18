@@ -156,7 +156,8 @@ public class UIDebug : MonoBehaviour
 		if (info == null || info.attributes == null)
 			yield break;
 
-		string url = "http://localhost:3000/rarity?";
+		//string url = "http://localhost:3000/rarity?";
+		string url = "https://arcadians-rarity.herokuapp.com/rarity?";
 
 		int len = info.attributes.Count;
 		for (int i=0; i<len; i++)
