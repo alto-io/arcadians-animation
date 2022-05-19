@@ -8,9 +8,24 @@ using OPGames.Arcadians;
 [System.Serializable]
 public class RarityResult
 {
+	[System.Serializable]
+	public class Stats
+	{
+		public float hpVal;
+		public int attackRange;
+		public float attackSpeed;
+		public float moveSpeed;
+		public float damageVal;
+		public float defenseVal;
+		public float critChance;
+	}
+
+	public string className;
 	public string rarity;
 	public float score;
 	public List<Attribute> attributes;
+	public Stats statsBase;
+	public Stats statsFinal;
 }
 
 public class UIDebug : MonoBehaviour
@@ -21,6 +36,7 @@ public class UIDebug : MonoBehaviour
 	[SerializeField] private Text textParts;
 	[SerializeField] private Text textRarity;
 	[SerializeField] private Text textScore;
+	[SerializeField] private Text textStats;
 	[SerializeField] private Image image;
 	[SerializeField] private InputField input;
 	[SerializeField] private Text textLog;
@@ -74,6 +90,11 @@ public class UIDebug : MonoBehaviour
 		if (arcadian == null) return;
 		currId = id;
 		input.text = id.ToString();
+
+		textParts.text = "-";
+		textStats.text = "-";
+		textRarity.text = "-";
+		textScore.text = "-";
 
 		arcadian.Load(id, (info) =>
 		{
@@ -186,6 +207,7 @@ public class UIDebug : MonoBehaviour
 		if (textScore != null) textScore.text = r.score.ToString();
 		
 		FillTextParts(r.attributes, textParts);
+		FillTextStats(r, textStats);
 	}
 
 	private void FillTextParts(List<Attribute> attributes, Text text)
@@ -201,7 +223,60 @@ public class UIDebug : MonoBehaviour
 			if (i > 0) str += "\n";
 			str += $"{attr.trait_type}: {attr.value} ({attr.rarity})";
 		}
+		text.text = str;
+	}
+
+	private void FillTextStats(RarityResult result, Text text)
+	{
+		if (text == null) return;
+		if (result == null) return;
+		if (result.statsBase == null) return;
+		if (result.statsFinal == null) return;
+
+		var statsBase = result.statsBase;
+		var statsFinal = result.statsFinal;
+		var statsBonus = new RarityResult.Stats();
+
+		statsBonus.hpVal = statsFinal.hpVal - statsBase.hpVal;
+		statsBonus.attackRange = statsFinal.attackRange - statsBase.attackRange;
+		statsBonus.attackSpeed = statsFinal.attackSpeed - statsBase.attackSpeed;
+		statsBonus.moveSpeed = statsFinal.moveSpeed - statsBase.moveSpeed;
+		statsBonus.damageVal = statsFinal.damageVal - statsBase.damageVal;
+		statsBonus.defenseVal = statsFinal.defenseVal - statsBase.defenseVal;
+		statsBonus.critChance = statsFinal.critChance - statsBase.critChance;
+
+		string str = FormatStat("HP", statsBase.hpVal, statsBonus.hpVal);
+		str += FormatStat("Attack Range", statsBase.attackRange, statsBonus.attackRange);
+		str += FormatStat("Attack Speed", statsBase.attackSpeed, statsBonus.attackSpeed);
+		str += FormatStat("Move Speed", statsBase.moveSpeed, statsBonus.moveSpeed);
+		str += FormatStat("Damage", statsBase.damageVal, statsBonus.damageVal);
+		str += FormatStat("Defense", statsBase.defenseVal, statsBonus.defenseVal);
+		str += FormatStat("CritChance", statsBase.critChance, statsBonus.critChance, true);
 
 		text.text = str;
+	}
+
+	private string FormatStat(string label, float val, float bonus, bool isPercent = false)
+	{
+		string format = "{0}: {1:G4}\n";
+		if (bonus > 0) format = "{0}: {1:G4} <color=blue>(+{2:G4})</color>\n";
+
+		if (isPercent)
+		{
+			val *= 100.0f;
+			bonus *= 100.0f;
+
+			if (bonus > 0) format = "{0}: {1:G4}% <color=blue>(+{2:G4}%)</color>\n";
+			else           format = "{0}: {1:G4}%\n";
+		}
+
+		return string.Format(format, label, val, bonus);
+	}
+	
+	private string FormatStat(string label, int val, int bonus)
+	{
+		string format = "{0}: {1}\n";
+		if (bonus > 0) format = "{0}: {1} <color=blue>(+{2})</color>\n";
+		return string.Format(format, label, val, bonus);
 	}
 }
