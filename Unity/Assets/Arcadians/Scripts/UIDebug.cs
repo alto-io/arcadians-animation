@@ -258,25 +258,27 @@ public class UIDebug : MonoBehaviour
 
 	private string FormatStat(string label, float val, float bonus, bool isPercent = false)
 	{
+		string bonusColor = "orange";
 		string format = "{0}: {1:G4}\n";
-		if (bonus > 0) format = "{0}: {1:G4} <color=blue>(+{2:G4})</color>\n";
+		if (bonus > 0) format = "{0}: {1:G4} <color={3}>(+{2:G4})</color>\n";
 
 		if (isPercent)
 		{
 			val *= 100.0f;
 			bonus *= 100.0f;
 
-			if (bonus > 0) format = "{0}: {1:G4}% <color=blue>(+{2:G4}%)</color>\n";
+			if (bonus > 0) format = "{0}: {1:G4}% <color={3}>(+{2:G4}%)</color>\n";
 			else           format = "{0}: {1:G4}%\n";
 		}
 
-		return string.Format(format, label, val, bonus);
+		return string.Format(format, label, val, bonus, bonusColor);
 	}
 	
 	private string FormatStat(string label, int val, int bonus)
 	{
+		string bonusColor = "orange";
 		string format = "{0}: {1}\n";
-		if (bonus > 0) format = "{0}: {1} <color=blue>(+{2})</color>\n";
-		return string.Format(format, label, val, bonus);
+		if (bonus > 0) format = "{0}: {1} <color={3}>(+{2})</color>\n";
+		return string.Format(format, label, val, bonus, bonusColor);
 	}
 }
