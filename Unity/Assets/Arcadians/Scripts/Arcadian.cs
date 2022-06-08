@@ -16,6 +16,7 @@ public class Arcadian : MonoBehaviour
 	private ArcadianInfo info;
 
 	public ArcadianInfo Info { get { return info; } }
+	public string Metadata { get; private set; }
 
 	private void Start()
 	{
@@ -41,6 +42,7 @@ public class Arcadian : MonoBehaviour
 			var json = www.downloadHandler.text;
 			LoadFromJson(json, onDone);
 
+			Metadata = json;
 		}
 	}
 
