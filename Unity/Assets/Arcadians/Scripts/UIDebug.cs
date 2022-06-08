@@ -4,6 +4,7 @@ using UnityEngine.Networking;
 using System.Collections;
 using System.Collections.Generic;
 using OPGames.Arcadians;
+using TMPro;
 
 [System.Serializable]
 public class RarityResult
@@ -33,14 +34,20 @@ public class UIDebug : MonoBehaviour
 	[SerializeField] private Arcadian arcadian;
 	[SerializeField] private Text textName;
 	[SerializeField] private Text textClass;
-	[SerializeField] private Text textParts;
 	[SerializeField] private Text textRarity;
 	[SerializeField] private Text textScore;
-	[SerializeField] private Text textStats;
+	[SerializeField] private TextMeshProUGUI textStats;
+	[SerializeField] private TextMeshProUGUI textParts;
 	[SerializeField] private Image image;
 	[SerializeField] private InputField input;
 	[SerializeField] private Text textLog;
 	[SerializeField] private int logLines = 7;
+
+	[SerializeField] private Color colorStatBonus = new Color(1.0f, 0.65f, 0);
+	[SerializeField] private Color colorCommon = Color.white;
+	[SerializeField] private Color colorRare = Color.blue;
+	[SerializeField] private Color colorEpic = new Color(0.5f, 0.0f, 0.5f);
+	[SerializeField] private Color colorLegendary = new Color(1.0f, 0.65f, 0);
 
 	private Queue<string> logs = new Queue<string>();
 	private const int MIN_ID = 1;
@@ -210,7 +217,7 @@ public class UIDebug : MonoBehaviour
 		FillTextStats(r, textStats);
 	}
 
-	private void FillTextParts(List<Attribute> attributes, Text text)
+	private void FillTextParts(List<Attribute> attributes, TextMeshProUGUI text)
 	{
 		if (text == null) return;
 		if (attributes == null) return;
@@ -221,12 +228,16 @@ public class UIDebug : MonoBehaviour
 		{
 			var attr = attributes[i];
 			if (i > 0) str += "\n";
-			str += $"{attr.trait_type}: {attr.value} ({attr.rarity})";
+
+			Color c = GetRarityColor(attr.rarity);
+			string strCol = "#" + ColorUtility.ToHtmlStringRGB(c);
+
+			str += $"<color={strCol}>{attr.value}</color>";
 		}
 		text.text = str;
 	}
 
-	private void FillTextStats(RarityResult result, Text text)
+	private void FillTextStats(RarityResult result, TextMeshProUGUI text)
 	{
 		if (text == null) return;
 		if (result == null) return;
@@ -258,17 +269,17 @@ public class UIDebug : MonoBehaviour
 
 	private string FormatStat(string label, float val, float bonus, bool isPercent = false)
 	{
-		string bonusColor = "orange";
-		string format = "{0}: {1:G4}\n";
-		if (bonus > 0) format = "{0}: {1:G4} <color={3}>(+{2:G4})</color>\n";
+		string bonusColor = "#" + ColorUtility.ToHtmlStringRGB(colorStatBonus);
+		string format = "{1:G4}\n";
+		if (bonus > 0) format = "{1:G4} <color={3}>(+{2:G4})</color>\n";
 
 		if (isPercent)
 		{
 			val *= 100.0f;
 			bonus *= 100.0f;
 
-			if (bonus > 0) format = "{0}: {1:G4}% <color={3}>(+{2:G4}%)</color>\n";
-			else           format = "{0}: {1:G4}%\n";
+			if (bonus > 0) format = "{1:G4}% <color={3}>(+{2:G4}%)</color>\n";
+			else           format = "{1:G4}%\n";
 		}
 
 		return string.Format(format, label, val, bonus, bonusColor);
@@ -276,9 +287,21 @@ public class UIDebug : MonoBehaviour
 	
 	private string FormatStat(string label, int val, int bonus)
 	{
-		string bonusColor = "orange";
-		string format = "{0}: {1}\n";
-		if (bonus > 0) format = "{0}: {1} <color={3}>(+{2})</color>\n";
+		string bonusColor = "#" + ColorUtility.ToHtmlStringRGB(colorStatBonus);
+		string format = "{1}\n";
+		if (bonus > 0) format = "{1} <color={3}>(+{2})</color>\n";
 		return string.Format(format, label, val, bonus, bonusColor);
+	}
+
+	private Color GetRarityColor(string rarity)
+	{
+		rarity = rarity.ToLower();
+
+		if (rarity == "common") return colorCommon;
+		if (rarity == "rare") return colorRare;
+		if (rarity == "epic") return colorEpic;
+		if (rarity == "legendary") return colorLegendary;
+
+		return colorCommon;
 	}
 }
