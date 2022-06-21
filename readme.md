@@ -56,3 +56,13 @@ The Blender directory contains the Blend file used to export the FBX to Unity.
 
 The Blend file can be exported to GLTF as well and imported to other open source game frameworks that support GLTF
 
+## Importing to other game engines or frameworks
+
+Most 3D capable game engines or frameworks will be able to import and use the animated Arcadian mesh. You also need the individual parts under `Unity/Assets/Arcadians/Resources/Parts` and use the correct texture to use based on the metadata
+
+## Future development
+
+Pets are not yet implemented here and in Arcadeum Arena. We will get to this in the future
+
+
+
