@@ -23,18 +23,16 @@ This contains the Unity/Assets/Arcadians directory. Import it to a separate proj
 ### 3. With another script link the Arcadian prefab and call its functions
 
 ```
+using UnityEngine;
+using OPGames.Arcadians;
+
 public class Test : MonoBehaviour
 {
 	public Arcadian arcadian;
 
 	private void Start()
 	{
-		arcadian.Load(1234); // pass the token id of the arcadian
-	}
-
-	private vodi AnimWalk()
-	{
-		arcadian.SetTrigger("Walk");
+		arcadian.Load(1234, null); 
 	}
 }
 ```
