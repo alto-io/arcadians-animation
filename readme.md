@@ -14,13 +14,13 @@ Open the UIDebug.cs shows how to use the Arcadian class
 
 ## Using in your Unity project
 
-### Import the unitypackage
+### 1. Import the unitypackage
 Found in the [releases page](https://github.com/alto-io/arcadians-animation/releases)
 This contains the Unity/Assets/Arcadians directory. Import it to a separate project so you can use the animated arcadians
 
-### Add the Arcadian prefab to the scene
+### 2. Add the Arcadian prefab to the scene
 
-### With another script link the Arcadian prefab and call its functions
+### 3. With another script link the Arcadian prefab and call its functions
 
 ```
 public class Test : MonoBehaviour
