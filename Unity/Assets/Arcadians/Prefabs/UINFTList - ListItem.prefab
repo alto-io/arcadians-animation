@@ -224,7 +224,7 @@ GameObject:
   - component: {fileID: 9090078604456950328}
   - component: {fileID: 5576879619969099699}
   m_Layer: 5
-  m_Name: UIArcadiansList - ListItem
+  m_Name: UINFTList - ListItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

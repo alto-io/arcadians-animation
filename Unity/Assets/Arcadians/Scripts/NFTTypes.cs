@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -20,6 +21,7 @@ public class NFTItemData
 
 	public Texture2D Texture;
 	public Sprite Spr;
+	public Action OnUpdate;
 
 	public string UniqueId
 	{

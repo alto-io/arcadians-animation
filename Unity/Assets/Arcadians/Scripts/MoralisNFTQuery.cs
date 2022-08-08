@@ -12,6 +12,23 @@ namespace OPGames.Arcadians
 {
 
 [System.Serializable]
+public class NFTAttribute
+{
+	public string trait_type;
+	public string value;
+	public string rarity;
+}
+
+[System.Serializable]
+public class NFTMetadata
+{
+	public List<NFTAttribute> attributes;
+	public string description;
+	public string name;
+	public string image;
+}
+
+[System.Serializable]
 public class MoralisNFTResponse
 {
 	[System.Serializable]
@@ -75,9 +92,9 @@ public class MoralisNFTQuery
 			{
 				www.SetRequestHeader("X-API-KEY", apiKey);
 				www.SetRequestHeader("accept", "application/json");
-
 				await www.SendWebRequest();
 				var json = www.downloadHandler.text;
+
 				if (string.IsNullOrEmpty(www.error) == false)
 				{
 					Debug.LogError(www.error);
@@ -93,14 +110,17 @@ public class MoralisNFTQuery
 
 				foreach (var a in response.result)
 				{
-					NFTItemData item = ToItemData(a, chain);
+					if (a == null) continue;
 
+					NFTItemData item = await ToNFTItemData(a, chain);
 					Debug.LogFormat("Found {0}, {1}", a.ToString(), item.CharClass);
+
 					list.Add(item);
 				}
 			}
 		}
 		while (response.result.Length == NFT_LIMIT);
+
 		return list;
 	}
 
@@ -128,7 +148,6 @@ public class MoralisNFTQuery
 			{
 				www.SetRequestHeader("X-API-KEY", apiKey);
 				www.SetRequestHeader("accept", "application/json");
-
 				await www.SendWebRequest();
 				var json = www.downloadHandler.text;
 
@@ -145,7 +164,7 @@ public class MoralisNFTQuery
 					continue;
 				}
 
-				NFTItemData item = ToItemData(a, chain);
+				NFTItemData item = await ToNFTItemData(a, chain);
 
 				Debug.LogFormat("Found {0}, {1}", a.ToString(), item.CharClass);
 				list.Add(item);
@@ -155,9 +174,8 @@ public class MoralisNFTQuery
 		return list;
 	}
 
-	static public NFTItemData ToItemData(MoralisNFTResponse.Item a, string chain)
+	static public async UniTask<NFTItemData> ToNFTItemData(MoralisNFTResponse.Item a, string chain)
 	{
-		var info = JsonUtility.FromJson<ArcadianInfo>(a.metadata);
 
 		NFTItemData item = new NFTItemData();
 		item.Chain       = chain;
@@ -165,15 +183,97 @@ public class MoralisNFTQuery
 		item.Contract    = a.token_address;
 		item.Name        = $"{a.name} #{a.token_id}";
 		item.Metadata    = a.metadata;
-		item.ImageURL    = info.image;
 
-	//	Context.imageDownloader.DownloadWithCB(info.image, (info) =>
-	//			{
-	//				item.Texture = info.Tex;
-	//			});
+		if (string.IsNullOrEmpty(a.metadata))
+		{
+			RequestURI(item, chain);
+		}
+		else
+		{
+			ReadNFTMetadata(item);
+		}
 
-		//Debug.Log(info.image);
 		return item;
+	}
+
+	static private async UniTaskVoid RequestURI(NFTItemData nft, string chain)
+	{
+		string chainForURI = "ethereum";
+		if (chain != "eth")
+			chainForURI = chain;
+
+		// testnet needs the RPC parameter
+		string uri = await ERC721.URI(chainForURI, "mainnet", nft.Contract, nft.TokenId /*, rpc*/ );
+		uri = SanitizeURL(uri);
+
+		Debug.Log($"Requesting URI for {nft.TokenId}\n{uri}");
+		using (var www2 = UnityWebRequest.Get(uri))
+		{
+			await www2.SendWebRequest();
+			nft.Metadata = www2.downloadHandler.text;
+
+			ReadNFTMetadata(nft);
+		}
+
+		// also tell moralis to resync the NFT
+		ResyncNFT(nft.Contract, nft.TokenId, chain);
+	}
+
+	static private void ReadNFTMetadata(NFTItemData nft)
+	{
+		NFTMetadata info = null;
+		if (string.IsNullOrEmpty(nft.Metadata) == false)
+			info = JsonUtility.FromJson<NFTMetadata>(nft.Metadata);
+
+		if (info != null)
+			nft.ImageURL = SanitizeURL(info.image);
+
+		Debug.Log(nft.ImageURL);
+		ImageDownloader.Instance.DownloadWithCB(nft.ImageURL, (info)=>
+		{
+			if (info != null)
+			{
+				nft.Texture = info.Tex; 
+				nft.Spr = info.Spr; 
+				if (nft.OnUpdate != null)
+					nft.OnUpdate();
+			}
+		});
+	}
+
+	static private async UniTaskVoid ResyncNFT(string nftContract, string tokenId, string chain = "eth")
+	{
+		const string api = "https://deep-index.moralis.io/api/v2/nft/{0}/{1}/metadata/resync?chain={2}&flag=uri&mode=async";
+		string apiKey = GetApiKey();
+		string url = string.Format(api, nftContract, tokenId, chain);
+		using (var www = UnityWebRequest.Get(url))
+		{
+			www.SetRequestHeader("X-API-KEY", apiKey);
+			www.SetRequestHeader("accept", "application/json");
+
+			Debug.Log($"ResyncNFT {url}");
+
+			await www.SendWebRequest();
+			var json = www.downloadHandler.text;
+
+			if (string.IsNullOrEmpty(www.error) == false)
+			{
+				Debug.LogError(www.error);
+				Debug.LogError($"Response: {json}");
+			}
+		}
+	}
+
+	static public string SanitizeURL(string url)
+	{
+		url = url.Trim();
+		if (url.IndexOf("ipfs://") == 0)
+		{
+			string ipfsPath = url.Replace("ipfs://", "");
+			url = "https://ipfs.io/ipfs/" + ipfsPath;
+		}
+
+		return url;
 	}
 }
 
