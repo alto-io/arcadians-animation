@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
 using OPGames.Arcadians;
@@ -59,6 +60,11 @@ public class UIDebug : MonoBehaviour
 	private void Start()
 	{
 		OnBtnRandom();
+	}
+
+	public void OnBtnMainMenu()
+	{
+		SceneManager.LoadScene("MainMenu");
 	}
 
 	public void OnBtnNext()

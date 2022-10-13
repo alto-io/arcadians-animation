@@ -1,15 +1,20 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using TMPro;
+using System.Runtime.InteropServices;
 
 namespace OPGames.Arcadians
 {
 
 public class UINFTList : MonoBehaviour
 {
+    [DllImport("__Internal")]
+    private static extern void JSPasteWallet(string gettext);
+
 	[SerializeField] private GameObject loading;
 	[SerializeField] private GameObject listItemPrefab;
 	[SerializeField] private Transform listParent;
@@ -19,6 +24,11 @@ public class UINFTList : MonoBehaviour
 	[SerializeField] private string nftChain = "eth";
 
 	private List<GameObject> listClones = new List<GameObject>();
+
+	public void OnBtnMainMenu()
+	{
+		SceneManager.LoadScene("MainMenu");
+	}
 
 	public void OnSearch()
 	{
@@ -54,10 +64,16 @@ public class UINFTList : MonoBehaviour
 
 	public void OnPaste()
 	{
+#if UNITY_WEBGL && !UNITY_EDITOR
+		JSPasteWallet("wallet");
+#else
+		Debug.Log("WebGL Only");
+#endif
 	}
 
-	public void OnBack()
-	{
+	public void PasteWallet(string str)   
+	{ 
+		inputField.text = str; 
 	}
 
 	private void DisableAllItems()

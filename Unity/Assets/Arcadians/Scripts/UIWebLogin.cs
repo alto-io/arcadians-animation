@@ -12,6 +12,11 @@ public class UIWebLogin : MonoBehaviour
 	[SerializeField] private string welcomeMessage = "Welcome to Arcadians";
 	[SerializeField] private TextMeshProUGUI textWallet;
 
+	public void OnBtnMainMenu()
+	{
+		SceneManager.LoadScene("MainMenu");
+	}
+
 	static private string GetNonce()
 	{
 		//https://answers.unity.com/questions/965798/generate-a-random-string-from-a-specified-length.html

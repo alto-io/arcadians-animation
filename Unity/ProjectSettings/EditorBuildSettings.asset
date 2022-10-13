@@ -6,9 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Arcadians/Scenes/WebLogin.unity
-    guid: a669e25495ea5b64397fbab8ac997430
+    path: Assets/Arcadians/Scenes/MainMenu.unity
+    guid: 02592dab1a71b004c9bc8ca4e6c2456a
   - enabled: 1
     path: Assets/Arcadians/Scenes/AnimationAndRarity.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Arcadians/Scenes/WebLogin.unity
+    guid: a669e25495ea5b64397fbab8ac997430
+  - enabled: 1
+    path: Assets/Arcadians/Scenes/ArcadiansList.unity
+    guid: 7179a49990251054f8f423b14dc46738
   m_configObjects: {}

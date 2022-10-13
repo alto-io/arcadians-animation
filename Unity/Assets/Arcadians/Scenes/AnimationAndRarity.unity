@@ -564,6 +564,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UIAnimationAndRarity
       objectReference: {fileID: 0}
+    - target: {fileID: 4152597128913226328, guid: 1c97eed686fc05b4da73e59545dfeb6c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c97eed686fc05b4da73e59545dfeb6c, type: 3}
 --- !u!1001 &5126294379962355142

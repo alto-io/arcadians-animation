@@ -1,4 +1,5 @@
 #pragma warning disable CS4014
+using System;
 using System.Collections;
 using System.Numerics;
 using System.Collections.Generic;
@@ -86,7 +87,7 @@ public class MoralisNFTQuery
 			if (response != null && string.IsNullOrEmpty(response.cursor) == false)
 				url += "&cursor=" + response.cursor;
 
-			//Debug.Log(url);
+			Debug.Log(url);
 
 			using (var www = UnityWebRequest.Get(url))
 			{
@@ -100,6 +101,8 @@ public class MoralisNFTQuery
 					Debug.LogError(www.error);
 					break;
 				}
+
+				Debug.Log(json);
 
 				response = JsonUtility.FromJson<MoralisNFTResponse>(json);
 				if (response == null || response.result == null)
@@ -187,6 +190,7 @@ public class MoralisNFTQuery
 		if (string.IsNullOrEmpty(a.metadata))
 		{
 			RequestURI(item, chain);
+			await UniTask.Delay(TimeSpan.FromSeconds(2)); // avoid rate limiting
 		}
 		else
 		{
