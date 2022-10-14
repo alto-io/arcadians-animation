@@ -66,6 +66,6 @@ Pets are not yet implemented here and in Arcadeum Arena. We will get to this in 
 
 ## External Dependencies
 
-[UniTask v2](https://github.com/Cysharp/UniTask)
-[ChainSafe](https://github.com/ChainSafe/web3.unity)
-[Json.net](https://docs.unity3d.com/Packages/com.unity.nuget.newtonsoft-json@3.0/manual/index.html)
+- [UniTask v2](https://github.com/Cysharp/UniTask)
+- [ChainSafe](https://github.com/ChainSafe/web3.unity)
+- [Json.net](https://docs.unity3d.com/Packages/com.unity.nuget.newtonsoft-json@3.0/manual/index.html)
