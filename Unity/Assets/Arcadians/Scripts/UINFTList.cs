@@ -42,6 +42,12 @@ public class UINFTList : MonoBehaviour
 		DisableAllItems();
 
 		var list = await MoralisNFTQuery.QueryWallet(inputField.text, nftContract, nftChain);
+		if (list == null)
+		{
+			loading.SetActive(false);
+			return;
+		}
+
 		foreach (var item in list)
 		{
 			if (item == null) continue;

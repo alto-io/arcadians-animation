@@ -71,7 +71,8 @@ public class MoralisNFTQuery
 		string apiKey = GetApiKey();
 		if (string.IsNullOrEmpty(apiKey))
 		{
-			Debug.LogError("Please provide a valid Api Key for Moralis");
+			Debug.LogError("Please provide a valid Api Key for Moralis and assign it in the MoralisConfig scriptable object.");
+			Debug.LogError("Sign up for free on https://moralis.io");
 			return null;
 		}
 
