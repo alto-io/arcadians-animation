@@ -4,6 +4,8 @@
 
 https://arcadians-animation.herokuapp.com/
 
+![Demo](Media/aa-anim-demo.gif)
+
 ## Unity Project
 
 Unity project to demonstrate the animated arcadians.
